@@ -3,11 +3,13 @@ let newBook;
 
 //creates new book
 
-function Book(title, author, pages, finished) {
+class Book {
+    constructor (title, author, pages, finished) {
     this.title = document.getElementById('title').value;
     this.author = document.getElementById('author').value;
     this.pages = document.getElementById('pages').value;
     this.finished = document.getElementById('finished').checked;
+    }
 };
 
 //add new book to library
