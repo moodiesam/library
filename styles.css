@@ -34,6 +34,25 @@ body {
     width: 200px;
 }
 
+input:invalid {
+    border-color: red;
+    background-color: lightsalmon;
+}
+
+#error {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+
+    box-sizing: border-box;
+}
+
 .checkbox {
     display: grid;
     grid-template-columns: 40px 75px;

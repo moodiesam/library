@@ -12,9 +12,30 @@ class Book {
     }
 };
 
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const form = document.getElementById('form');
+const errors = document.getElementById('error');
+
+form.addEventListener('submit', (event) => {
+    if (!title.validity.valid || !author.validity.valid || !pages.validity.valid) {
+        showError();
+        event.preventDefault();
+    } else {
+        errors.innerHTML = "";
+        addBookToLibrary();
+    }
+})
+
+function showError() {
+    errors.innerHTML = "Make sure all fields are filled out!";
+}
+
 //add new book to library
 
 function addBookToLibrary() {
+
     //take newBook and add it to the myLibrary array
 
     const newBook = new Book(title , author, pages, finished);
@@ -34,10 +55,6 @@ function addBookToLibrary() {
 //once submit button is pressed...
 //1. create object with input from each field
 //2. add that book to library array
-
-var button = document.getElementById("btn");
-
-button.addEventListener('click', addBookToLibrary);
 
 //function that erases old divs
 
